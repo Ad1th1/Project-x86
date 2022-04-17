@@ -1,0 +1,25 @@
+; display a string using macro
+
+data segment
+a db 'manipal$'
+data ends
+
+code segment
+assume cs:code, ds:data
+start:
+mov dx, data
+mov ds, dx
+
+disp a
+
+mov ah,4ch
+int 21h
+
+disp macro msg
+mov dx, offset msg
+mov ah,09
+int 21h
+endm
+
+code ends
+end start
