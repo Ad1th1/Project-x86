@@ -1,0 +1,44 @@
+Basically lcm(a,b) = (a x b) / gcd(a,b)
+
+data segment
+num1 db 0005h
+num2 db 0002h
+gcd dw ?
+lcm dw ?
+data ends
+
+code segment
+assume cs:code, ds:data
+start:
+mov ax, data
+mov ds, ax
+
+mov ax, num1
+mov bx, num2
+
+first:
+cmp ax, bx
+ja next
+xchg ax,bx
+
+next: 
+mov dx, 0000h
+div bx
+cmp dx, 0000h
+je last
+mov ax, dx
+jmp first
+
+last:
+mov gcd, bx
+mov ax, num1
+mov bx, num2
+mul bx
+div gcd
+mov lcm, ax
+
+mov ah, 4ch
+int 21h
+
+code ends
+end start
