@@ -1,0 +1,11 @@
+CODE SEGMENT
+ASSUME CS:CODE
+START:MOV AL,11H ; Copy first operand to AL register
+ MOV BL,0FFH ; Copy second operand to BL register
+ MUL BL ; Perform multiplication
+ 
+ MOV AH,4CH 
+ INT 21H
+
+CODE ENDS
+END START
