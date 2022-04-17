@@ -1,0 +1,40 @@
+https://www.youtube.com/watch?v=zcvVyrqnvsE&t=2s
+
+data segment
+bcd dw 5679h
+hex dw 0
+data ends
+
+code segment
+assume cs:code,ds:data
+start:
+mov ax, data
+mov ds, ax
+
+mov ax, 0000h
+mov bx, 00001h
+
+call bcd2bin
+mov bx, 00ah
+
+call bcd2bin
+mov bx, 0064h
+
+call bcd2bin
+mov bx, 03e8h
+
+bcd2bin proc near
+mov ax, bcd
+and ax, 000fh
+mul bx
+add hex, ax
+mov cl, 04
+ror bcd, cl
+ret 
+bcd2bin  endp
+
+mov ah,4ch
+int 21h
+
+code ends
+end start
