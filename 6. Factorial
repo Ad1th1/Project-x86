@@ -1,0 +1,30 @@
+data segment
+num db 5h
+ans db ?
+data ends
+
+code segment
+assume cs:code, ds:data
+start:
+mov ax, data
+mov ds, ax
+
+mov ax, num
+mov bx, ax
+sub bx, 1
+mov cx, bx
+
+loop
+mul bx
+sub bx, 1
+cmp bx, 1
+je last
+end loop
+
+last:
+mov ans, ax
+mov ah, 4ch
+int 21h
+
+code ends
+end start
