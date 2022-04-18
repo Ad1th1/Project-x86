@@ -1,0 +1,24 @@
+DATA SEGMENT ;start of data segment
+X DW 0010H,52H,30H,40H,50H ;initialize data segment
+LAR DW ?
+DATA ENDS ;end of data segment
+CODE SEGMENT ;start of code segment
+ASSUME CS:CODE,DS:DATA
+START: MOV AX,DATA
+MOV DS,AX
+MOV CX,05H ;load CX register with number of datawords in X
+LEA SI,X ;initialize SI to point to the first number
+MOV AX,[SI] ;make a copy of the number pointed by SI ;in AX
+DEC CX ;set count value in CX for comparison
+UP: CMP AX,[SI+2] ;compare two adjacent numbers(one is in ;AX and
+the other is pointed by SI+2)
+JA CONTINUE ;if contents of AX is greater than the next
+MOV AX,[SI+2] ;number in array retain the contents of AX
+CONTINUE:ADD SI,2 ;if not make a copy of the larger number in ;AX point to the next number
+DEC CX ;decrement CX to check if all numbers are ;compared
+JNZ UP ;if no continue to compare
+MOV LAR,AX ;if yes make a copy of AX(largest number) ;in user defined memory location LAR
+MOV AH,4CH ;terminate the process
+INT 21H
+CODE ENDS ;end of code segment
+END START
