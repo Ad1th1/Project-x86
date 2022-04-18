@@ -1,0 +1,31 @@
+; HCF of two numbers
+
+data segment
+
+num1 dw 0005h
+num2 dw 0002h
+ans dw ?
+
+data ends
+
+code segment
+assume cs:code,ds:data
+start:
+mov ax, data
+mov ds, ax
+
+mov ax, num1
+mov bx, num2
+
+first: 
+cmp ax, bx
+ja next
+xchg ax, bx
+
+next:
+mov dx, 0000h
+div bx
+cmp dx, 0000h
+je last
+mov ax, dx
+jmp first
