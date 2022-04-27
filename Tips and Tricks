@@ -1,0 +1,9 @@
+-> to get the string displayed, type file_name.exe in the dos prompt
+
+-> mov ah, 2
+   int 21h
+   to display the result or whatever
+
+-> to debug, type debug file_name.asm
+   t -> to trace through program
+   q -> to get out of the program
