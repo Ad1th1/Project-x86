@@ -1,0 +1,40 @@
+data segment
+array1 db 5,4,1,3,2
+result db ?
+count db 05h
+data ends
+
+code segment
+assume cs:code, ds:data
+start:
+
+mov ax, data
+mov ds,ax
+
+mov cx, 5
+mov bl, 20h   ;initialize to a random value
+lea si, array1
+
+l1:
+mov al, [si]
+cmp al, bl
+jge l2
+mov bl,al
+
+l2:
+inc si
+dec cx
+jnz l1
+mov result, bl
+mov dl, result
+add dl, 48
+
+mov ah, 2	; to print character on screen
+int 21h
+
+mov ah, 4ch
+int 21h
+
+code ends
+end start
+
