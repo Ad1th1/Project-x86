@@ -1,12 +1,15 @@
+data segment
+num1 db 01h
+num2 db 02h
+sum db 00h
 carry db 00h
 data ends
 
 code segment
-assume cs:code, ds:data
+assume cs:code,ds:data
 start:
-
 mov ax, data
-mov ds,ax
+mov ds, ax
 
 mov ah, 00h
 mov al,num1
@@ -16,14 +19,9 @@ adc al,bl
 mov sum,al
 adc carry,0
 
-mov dl,sum
-add dl,48
-
-mov ah,2
-int 21h
-
-mov ah, 4ch
+mov ah,4ch
 int 21h
 
 code ends
 end start
+
