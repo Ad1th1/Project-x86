@@ -1,0 +1,37 @@
+code segment
+assume cs:code
+start:
+
+main proc
+
+mov dl,'a'
+mov ah,2
+int 21h
+
+mov dl,'d'
+mov ah,2
+int 21h
+
+mov dl,'i'
+mov ah,2
+int 21h
+
+mov dl,'t'
+mov ah,2
+int 21h
+
+mov dl,'h'
+mov ah,2
+int 21h
+
+mov dl,'i'
+mov ah,2
+int 21h
+
+mov ah,4ch
+int 21h
+ 
+main endp
+
+code ends
+end start
