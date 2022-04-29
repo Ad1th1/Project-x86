@@ -1,0 +1,38 @@
+data segment
+
+msg1 db 'hello$'
+msg2 db 'world$'
+data ends
+
+code segment
+assume cs:code,ds:data
+start:
+
+main proc
+mov ax, data
+mov ds, ax
+
+mov dx,offset msg1
+mov ah,9
+int 21h
+
+mov dx,10
+mov ah,2
+int 21h
+
+mov dx,13
+mov ah,2
+int 21h
+
+mov dx,offset msg2
+mov ah,9
+int 21h
+
+
+mov ah,4ch
+int 21h
+
+main endp
+
+code ends
+end start
