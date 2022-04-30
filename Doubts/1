@@ -1,4 +1,5 @@
 1. When adding two number how to get the answer back in decimal form? Tried daa. Didn't work
+Also how to see data segment clearly?
 
 data segment
 num1 db 1h
