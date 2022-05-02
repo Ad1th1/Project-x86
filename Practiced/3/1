@@ -1,0 +1,19 @@
+data segment
+sum dw 0h
+carry dw 0h
+data ends
+
+code segment
+assume cs:code,ds:data
+start:
+
+mov ax,0aaah
+mov bx,0bbbh
+clc
+adc ax,bx
+
+mov ah,4ch
+int 21h
+
+code ends
+end start
