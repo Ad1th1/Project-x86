@@ -14,3 +14,5 @@
 
 -> var1 db 'a'  ; to store a character
 -> var1 db 'hello$'  ; to store a string
+
+-> ascii to hex -> 1 => 31
