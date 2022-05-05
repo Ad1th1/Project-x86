@@ -7,6 +7,19 @@
 -> mov ah,1
    int 21h
    to read input
+   
+-> mov ah,06h
+   int 21h
+This instruction reads a character from the keyboard or writes a character to the
+standard output device. 
+If the DL register contains a value between 00H-FEH, it
+displays the character on screen. If the DL register contains FFH, and a character
+is ready, AL register contains the character input and Zero Flag is SET.
+If the character is not ready when DL register contains FFH, Zero Flag is RESET
+and AL register contains 00H
+-> ZF set if no character available and AL = 00h
+-> ZF clear if character available AL = character read
+
 
 -> to debug, type debug file_name.asm
    t -> to trace through program
