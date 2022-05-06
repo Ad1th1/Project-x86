@@ -1,0 +1,72 @@
+-> 40 pins DIP(dual in-LINE package)
+-> Multiplexed add + data bus
+-> data bus = 16 bit
+-> address bus = 20 bit
+
+-> AD0 - AD15 = Address/data bus 
+    -> low order address buses multiplexed with data 
+    -> A = address, D = data
+ 
+-> A16 - A19 = High order address mus
+    -> multiplexed with status signals
+
+-> S0,S1,S2 = Status pins
+    -> 000 = interrupt acknowledge
+    -> 001 = read i/o port
+    -> 010 = write i/o port
+    -> 011 = halt
+    -> 100 = code access
+    -> 101 = read memory
+    -> 110 = write memory
+    -> 111 = passive state
+ 
+-> A16/S3, A17/S4, A18/S5, A19/S6 
+    -> Specified address lines are multiplexed with corresponding status signals
+    A17/S4  A16/S3
+    00 = Extra segment access
+    01 = Stack segment access
+    10 = Code segment access
+    11 = Data segment access
+
+1 -> GND
+2 -> AD14 
+3 -> AD13
+4 -> AD12 
+5 -> AD11 
+6 -> AD10 
+7 -> AD9 
+8 -> AD8 
+9 -> AD7 
+10 -> AD6 
+11 -> AD5 
+12 -> AD4 
+13 -> AD3
+14 -> AD2 
+15 -> AD1
+16 -> AD0
+17 -> NMI
+18 -> INTR
+19 -> CLK
+20 -> GND
+
+21 -> RESET
+22 -> READY
+23 -> TEST
+24 -> QS1
+25 -> QS0
+26 -> S0
+27 -> S1
+28 -> S2
+29 -> LOCK
+30 -> RQ/GT1 HLDA
+31 -> RQ/GT0 HOLD
+32 -> RD
+33 -> MN/MX
+34 -> BHE / S7 
+35 -> AD19 / S6
+36 -> AD18 / S5
+37 -> AD17 / S4
+38 -> AD16 / S3
+39 -> AD15
+40 -> Vcc
+
