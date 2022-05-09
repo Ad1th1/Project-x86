@@ -8,3 +8,8 @@
 -> repnz (repeat while nonzero) 
 -> repz (repeat while zero)
 causes the associated string instruction to repeat until the count register (CX) or the zero flag (ZF) matches a tested condition.
+
+-> The register SI and DI are called index registers. These registers are usually used to process arrays or strings. SI is called source index and DI is destination index.
+
+-> SI is always pointed to the source array and DI is always pointed to the destination. This is usually used to move a block of data, such as records (or structures) and arrays. These register is commonly coupled with DS and ES.
+
