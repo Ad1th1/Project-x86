@@ -57,10 +57,18 @@ mov ah,4ch
 int 21h
 
 delay proc
-MOV     CX, 0FH
-MOV     DX, 4240H
-MOV     AH, 86H
-INT     15H
+push si
+push di
+mov si,13h
+up1:
+mov di,0ffffh
+down1:
+dec di
+jnz down
+dec si
+jnz up
+pop di
+pop si
 ret
 delay endp
 
