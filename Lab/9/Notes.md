@@ -7,3 +7,4 @@
 ->  rep (repeat while equal)
 -> repnz (repeat while nonzero) 
 -> repz (repeat while zero)
+causes the associated string instruction to repeat until the count register (CX) or the zero flag (ZF) matches a tested condition.
