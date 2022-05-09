@@ -1,0 +1,60 @@
+-> 8086 = 40 pin IC
+
+-> 8255 has a better I/O interfacing capability
+-> has 24 I/O pins -> grouped in two 8 bit parallel ports: A and B, with remaining 8 bits in port C
+-> Port C -> used as induvidual bits / 4 bit ports : Cupper & Clower
+-> Operates in these modes
+    -> I/O modes (mode 0, mode 1, mode 2)
+    -> BSR(bit set reset) mode
+    
+ Control Signals in 8255
+ -> RD (Read) = active low = reads data from selected port of 8255
+ -> WR (Write) = active low = writes data to selected port of 8255
+ -> A0 and A1 = to select port a,b,c
+ -> Reset = Active high signal = clears control registers and sets all ports to input mode
+ 
+ CS A0 A1
+  0  0  0      Port A
+  0  0  1      Port B
+  0  1  0      Port C
+  0  1  1      Control Register = used to select modes = D0 - D7
+  1  X  X      Not Selected
+  
+-> IC can be bisected into 2 groups (A and B)
+
+Control Word of 8255
+ 
+  
+  D7 D6 D5 D4 D3 D2 D1 D0
+  
+  D7 = I/O or BSR(bit set reset mode)
+     = 1 -> I/O Mode
+     = 0 -> BSR Mode
+     
+ D3 D4 D5 D6 = group A
+   D5 and D6 = Mode 
+    -> 00 = Mode 0 
+    -> 01 = Mode 1 
+    -> 1x = Mode 2
+    
+   D4 = Port A
+    -> 1 = input
+    -> 0 = output
+    
+   D3 = Port Cupper
+    -> 1 = input
+    -> 0 = output
+    
+    
+    
+ D2 D1 D0 = Group B
+    D2 = Mode 
+      -> mode 0 = 0
+      -> mode 1 = 1
+    Port B
+      -> 1 = input
+      -> 0 = output
+    Port Clower 
+      -> 1 = input
+      -> 0 = output
+    
