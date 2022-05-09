@@ -29,3 +29,6 @@ and AL register contains 00H
 -> var1 db 'hello$'  ; to store a string
 
 -> ascii to hex -> 1 => 31
+
+-> Packed BCD is the first and second number are represented as the first 4 bits and last 4 bits in a byte. The number 75 in packed BCD would be 01110101. Unpacked BCD 
+is each number is represented by its own byte. The number 75 in unpacked BCD would be 00000111 and 00000101.
