@@ -1,5 +1,5 @@
 data segment
-num1 dw,11B4h
+num1 dw 11B4h
 num2 dw ?
 data ends
 
