@@ -1,5 +1,0 @@
--> DAA instruction is used when addition is performed on decimal numbers and the result is expected to be in packed decimal. 
--> AAA instruction is used to get the unpacked BCD values when the numbers to be added are in ASCII.
--> SUB instruction is used to perform subtraction of two numbers and Carry flag indicates borrow. 
--> To perform subtraction with borrow bit, SBB instruction is used. 
--> DAS and AAS instructions are used for decimal and ASCII subtraction adjustments respectively.
