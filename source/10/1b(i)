@@ -28,9 +28,8 @@ start:
 mov ax,data
 mov ds,ax
 mov ax,0h
-mov bx,64h
+mov bx,63h
 mov cx,64h
-inc cx
 back:
 	mov conv,0h
 	push cx
